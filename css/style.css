@@ -177,11 +177,11 @@ code {
 
 /* HERO SECTION */
 .hero {
-    padding: 120px 32px;
+    padding: 48px 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 0;
     background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-card) 100%);
     position: relative;
     overflow: hidden;
@@ -218,7 +218,7 @@ code {
 }
 
 .logo-hero {
-    margin-bottom: 48px;
+    margin-bottom: 24px;
 }
 
 .logo-sena {
@@ -261,6 +261,52 @@ code {
     font-size: 18px;
     line-height: 1.8;
     color: var(--slate300);
+}
+
+/* INTRODUCCIÓN */
+
+
+.intro-content {
+    position: relative;
+    overflow: hidden;
+    padding: 48px 52px;
+    border: 1px solid rgba(var(--indigo-rgb), 0.22);
+    border-radius: 24px;
+    background:
+        linear-gradient(135deg, rgba(var(--indigo-rgb), 0.12), transparent 45%),
+        rgba(var(--bg-card-rgb), 0.7);
+    box-shadow: 0 24px 60px rgba(2, 6, 23, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.intro-content::before {
+    content: '';
+    position: absolute;
+    top: -90px;
+    right: -70px;
+    width: 230px;
+    height: 230px;
+    border: 1px solid rgba(var(--violet-rgb), 0.2);
+    border-radius: 50%;
+    box-shadow: 0 0 0 36px rgba(var(--violet-rgb), 0.04), 0 0 0 72px rgba(var(--violet-rgb), 0.025);
+    pointer-events: none;
+}
+
+.intro-text {
+    position: relative;
+    z-index: 1;
+    max-width: 920px;
+}
+
+.intro-text p {
+    margin: 0;
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+}
+
+.intro-text p + p {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(var(--indigo-rgb), 0.18);
+    color: var(--slate400);
 }
 
 /* WHY GRID */
@@ -1556,7 +1602,7 @@ code {
 .footer {
     background-color: var(--bg-card);
     border-top: 1px solid rgba(var(--indigo-rgb), 0.1);
-    padding: 48px 32px;
+    padding: 18px 32px 8px;
 }
 
 .footer-content {
@@ -1583,7 +1629,7 @@ code {
 .footer-text {
     display: flex;
     flex-direction: column;
-    gap:15px;
+    gap: 6px;
     text-align: center;
 }
 /* Footer link styling */
@@ -1675,7 +1721,7 @@ code {
     }
 
     .header-container {
-        padding: 12px 28px;
+        padding: 9px;
     }
 
     .nav-header {
@@ -2686,5 +2732,319 @@ code {
     .icon-specs-mobile-grid,
     .icon-specs-desktop-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Header y footer: ajustes responsivos finales */
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+.nav-toggle,
+.nav-toggle-label {
+    display: none;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 1024px) {
+    .logo-main-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .logo-main-panel,
+    .logo-perimeter-card,
+    .logo-card-copy {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 1280px) {
+    .hero {
+        padding: 48px 28px;
+        min-height: 0;
+    }
+}
+
+@media (max-width: 1100px) {
+    .header-container {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px 20px;
+        padding: 12px 24px;
+    }
+
+    .logo-header {
+        justify-self: start;
+    }
+
+    .logo-sena {
+        justify-self: end;
+        width: 60px;
+        height: 60px;
+    }
+
+    .nav-header {
+        grid-column: 1 / -1;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 8px 12px;
+        padding: 2px 0 8px;
+        overflow: visible;
+    }
+
+    .nav-header a {
+        min-width: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-content {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 20px;
+        min-height: 0;
+    }
+
+    .intro-content {
+        padding: 32px;
+        border-radius: 20px;
+    }
+
+    .intro-content::before {
+        top: -110px;
+        right: -110px;
+        transform: scale(0.8);
+    }
+
+    .intro-text p + p {
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+
+    .header-container {
+        grid-template-columns: minmax(0, 1fr) auto auto;
+        padding: 10px 20px;
+    }
+
+    .logo-header img {
+        height: 56px;
+        max-height: 56px;
+    }
+
+    .logo-sena {
+        width: 52px;
+        height: 52px;
+    }
+
+    .nav-toggle {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .nav-toggle-label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        padding: 10px;
+        border: 1px solid rgba(var(--indigo-rgb), 0.35);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .nav-toggle-label > span:not(.sr-only) {
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--white);
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .nav-header {
+        display: none;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 2px;
+        padding: 14px;
+        border: 1px solid rgba(var(--indigo-rgb), 0.22);
+        border-radius: 16px;
+        background: rgba(var(--bg-card-rgb), 0.98);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .nav-toggle:checked ~ .nav-header {
+        display: grid;
+    }
+
+    .nav-header a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 46px;
+        padding: 10px 12px;
+        border: 1px solid rgba(var(--indigo-rgb), 0.16);
+        border-radius: 10px;
+        background: rgba(var(--indigo-rgb), 0.08);
+        color: var(--slate300);
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: left;
+    }
+
+    .nav-header a::after {
+        content: '>';
+        margin-left: 8px;
+        color: var(--indigo);
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .nav-header a:hover,
+    .nav-header a:focus-visible {
+        border-color: rgba(var(--indigo-rgb), 0.5);
+        background: rgba(var(--indigo-rgb), 0.16);
+        color: var(--white);
+    }
+
+    .nav-toggle:checked + .nav-toggle-label > span:not(.sr-only):nth-child(3) {
+        opacity: 0;
+    }
+
+    .nav-toggle:checked + .nav-toggle-label > span:not(.sr-only):nth-child(2) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle:checked + .nav-toggle-label > span:not(.sr-only):nth-child(4) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-header a {
+        font-size: 13px;
+    }
+
+    .footer {
+        padding: 16px 20px 8px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .footer-text {
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-logo-flunexy,
+    .footer-logo-sena {
+        width: auto;
+        height: 64px;
+        max-height: 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 32px 16px;
+        min-height: 0;
+    }
+
+    .intro-content {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .intro-text p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .header-container {
+        padding: 8px 16px;
+        gap: 8px 12px;
+    }
+
+    .logo-header img {
+        height: 46px;
+        max-height: 46px;
+    }
+
+    .logo-sena {
+        width: 44px;
+        height: 44px;
+    }
+
+    .nav-toggle-label {
+        width: 38px;
+        height: 38px;
+        padding: 9px;
+    }
+
+    .nav-header {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .nav-header a {
+        font-size: 12px;
+        min-height: 42px;
+    }
+
+    .footer {
+        padding: 14px 16px 6px;
+    }
+
+    .footer-content p {
+        font-size: 13px;
+    }
+
+    .footer-logo-flunexy,
+    .footer-logo-sena {
+        height: 56px;
+        max-height: 56px;
+    }
+}
+
+/* Iconografía centrada en pantallas móviles */
+@media (max-width: 768px) {
+    .icons-grid-16,
+    .icons-grid-20,
+    .icons-grid-24,
+    .icons-grid-32 {
+        justify-items: center;
+    }
+
+    .icon-box {
+        margin-inline: auto;
     }
 }
