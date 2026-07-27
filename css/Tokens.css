@@ -1,0 +1,35 @@
+:root{
+    /* Fondos */
+    --bg-deep: #070920; /* BG Deep (oscuro) */
+    --bg-card: #0C0F40; /* BG Card (oscuro) */
+    --bg-light: #F8F9FF; /* Fondo Claro */
+
+    /* Colores de marca */
+    --indigo: #818CF8; /* Indigo - acento principal */
+    --violet: #A78BFA; /* Violet - acento secundario */
+    --sky: #38BDF8; /* Sky - info / links */
+
+    --green: #34D399; /* Éxito / positivo */
+    --red: #F87171; /* Error / alerta */
+    --amber: #FBBF24; /* Advertencia */
+
+    /* Neutros */
+    --slate700: #334155;
+    --slate500: #64748B;
+    --slate400: #94A3B8;
+    --slate300: #CBD5E1;
+    --slate50: #F1F5F9;
+
+    --white: #FFFFFF;
+
+    /* RGB helpers for alpha colors */
+    --bg-deep-rgb: 7, 9, 32;
+    --bg-card-rgb: 12, 15, 64;
+    --indigo-rgb: 129, 140, 248;
+    --violet-rgb: 167, 139, 250;
+    --sky-rgb: 56, 189, 248;
+    --green-rgb: 52, 211, 153;
+    --red-rgb: 248, 113, 113;
+    --amber-rgb: 251, 191, 36;
+    --white-rgb: 255, 255, 255;
+}
