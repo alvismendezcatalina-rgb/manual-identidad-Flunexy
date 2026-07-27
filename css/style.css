@@ -449,6 +449,9 @@ code {
 .team-card h3 {
     margin: 0;
     font-size: 24px;
+    line-height: 1.25;
+    /* Reserva dos líneas para que el correo y la descripción coincidan entre tarjetas. */
+height: 2.5em;
     letter-spacing: -0.03em;
     color: var(--white);
 }
