@@ -3048,3 +3048,89 @@ body {
         margin-inline: auto;
     }
 }
+
+/* Tarjetas de color: el contenido siempre queda visible en móvil */
+@media (max-width: 768px) {
+    .color-card {
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    .color-top {
+        flex: 0 0 180px;
+        min-height: 180px;
+    }
+
+    .color-bottom {
+        flex: 0 0 auto;
+    }
+
+    .color-use,
+    .tech-value {
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (max-width: 480px) {
+    .color-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contacto y descripción de desarrolladores */
+.team-phone {
+    width: 100%;
+    margin: 0;
+    padding: 8px 12px;
+    border: 1px solid rgba(var(--indigo-rgb), 0.2);
+    border-radius: 10px;
+    background: rgba(var(--indigo-rgb), 0.08);
+    text-align: center;
+}
+
+.team-phone span {
+    display: none;
+}
+
+.team-phone a {
+    display: block;
+    min-width: 0;
+    color: var(--slate300);
+    font-size: 13px;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.team-phone a:hover,
+.team-phone a:focus-visible {
+    color: var(--indigo);
+    text-decoration: underline;
+}
+
+.team-description {
+    margin: 0;
+    color: var(--slate400);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+    .team-phone a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .team-card {
+        width: 100%;
+    }
+}
